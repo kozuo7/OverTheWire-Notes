@@ -1,0 +1,27 @@
+if you are not able to just rename file name '-' then, use ./ in front
+
+example 
+
+'./-'
+or 
+'cat ./-'
+
+cat - tells it to read from standard input instead of file. Acts as a placeholder for the data you type in terminal or pass from another coommand through pipe 
+
+so 
+
+add ./ 
+
+. points to the specific directory you are in 
+/ is the path 
+
+full sequence 
+./- 
+
+. = [points to dir you are in ] / = pathing - = filename 
+
+
+password obtained 
+'
+PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+'

@@ -1,0 +1,35 @@
+# Bandit 10 Notes
+
+Bandit 10 was another very easy one.
+
+The lab mentioned that the password was contained in the `data.txt` file, but it was encoded with Base64.
+
+So I first checked the help menu for the `base64` command:
+
+```bash
+base64 -h
+```
+
+After reading through the command list, I saw that:
+
+```bash
+-d
+```
+
+is used for decoding Base64.
+
+So I ran:
+
+```bash
+base64 -d data.txt
+```
+
+That decoded the contents of `data.txt` and printed out the password.
+
+This one was very straightforward. No real overcomplications, just had to know that Base64 can be decoded with the `-d` option.
+
+Password found:
+
+```text
+pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+```

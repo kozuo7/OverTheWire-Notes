@@ -1,0 +1,89 @@
+# Bandit 7 Notes
+
+This one was not too hard, but I used a couple things together that were not fully necessary. It worked, but I definitely overcomplicated it.
+
+I started by listing the files in the Bandit 7 home directory:
+
+```bash
+ls
+```
+
+I saw:
+
+```text
+data.txt
+```
+
+Then I tried to read the file with:
+
+```bash
+cat data.txt
+```
+
+The file had a ton of entries, with each line having a keyword and a possible password.
+
+The room said the password was next to the word `millionth`, so I was thinking I needed a command that could find that specific word inside the file and show the lines around it.
+
+At first, I tried using `grep`, but I did not know the exact syntax yet, so I was running into errors.
+
+Then I used `strings` instead:
+
+```bash
+strings data.txt
+```
+
+That basically gave the same output as `cat` here because the file was already readable text.
+
+After that, I ran:
+
+```bash
+strings data.txt | grep -A 10 "millionth"
+```
+
+## Breakdown
+
+```bash
+strings data.txt
+```
+
+Prints readable strings from the file.
+
+```bash
+|
+```
+
+Pipes the output from the first command into the next command.
+
+```bash
+grep -A 10 "millionth"
+```
+
+Searches for the word `millionth`.
+
+The `-A 10` means “after,” so it prints the matching line plus the next 10 lines after it.
+
+This worked, but while writing this out I realized I did not even need `-A 10`, because the password was on the same line as `millionth`.
+
+So this would have worked:
+
+```bash
+strings data.txt | grep "millionth"
+```
+
+But after looking into it more, I realized I did not even need `strings` either. as the issue I was running into previoous was running grep data.txt "millionth" having the txt file first, which ran into errors, after some search...
+
+The better final command is:
+
+```bash
+grep "millionth" data.txt
+```
+
+This searches `data.txt` for the word `millionth` and prints the whole matching line, which includes the password.
+
+Password found:
+
+```text
+VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+```
+
+Overall, this lab was relatively easy, but I overcomplicated it at first.
