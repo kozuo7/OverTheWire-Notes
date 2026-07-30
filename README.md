@@ -8,7 +8,7 @@ The goal of these notes is not to make a perfect polished walkthrough, but to do
 
 ## Current Progress
 
-- Bandit 0–10 completed
+- Bandit 0–12 completed
 - More levels will be added as I continue through the wargame
 
 ## Topics Covered So Far
@@ -23,6 +23,9 @@ The goal of these notes is not to make a perfect polished walkthrough, but to do
 - Sorting and finding unique lines with `sort` and `uniq`
 - Extracting readable strings with `strings`
 - Decoding Base64 with `base64 -d`
+- Decoding ROT13
+- Reversing hexdumps with `xxd -r`
+- Identifying and unpacking gzip, bzip2, and tar files
 
 ## Purpose
 
